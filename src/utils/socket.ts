@@ -1,11 +1,10 @@
 import { io, Socket } from "socket.io-client";
 
-// Connect to the local Node.js backend
-// In production, this will use the Vercel routing, and in dev it will use Vite proxy
-const SOCKET_URL = "/";
+// In production, you must change this to your Render/Railway backend URL!
+// e.g. const SOCKET_URL = import.meta.env.PROD ? "https://your-backend.onrender.com" : "http://localhost:3001";
+const SOCKET_URL = import.meta.env.PROD ? "https://tribelink-backend.onrender.com" : "http://localhost:3001";
 
 export const socket: Socket = io(SOCKET_URL, {
-  path: "/socket.io/",
   autoConnect: true,
   reconnection: true,
 });
