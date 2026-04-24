@@ -46,4 +46,4 @@ export const router = createBrowserRouter([
     path: "/blog",
     Component: Blog,
   },
-]);
+], { basename: import.meta.env.BASE_URL });
