@@ -52,8 +52,8 @@ io.on("connection", (socket) => {
     
     if (!queues[team]) queues[team] = [];
 
-    // Find any waiting fan of the same team
-    let waitingFanIndex = queues[team].findIndex((f) => f.visitorId !== visitorId);
+    // TEMPORARY FOR TESTING: Allow matching with yourself (different tab)
+    let waitingFanIndex = queues[team].findIndex((f) => true);
 
     if (waitingFanIndex !== -1) {
       // Match found!
